@@ -28,7 +28,8 @@
     // Inquirer and FS variables
     const inquirer = require('inquirer');
     const fs = require('fs');
-    const genMarkdown = require('./utils/generateMarkdown.js')
+    const genMarkdown = require('./utils/generateMarkdown.js');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // question array
 
@@ -69,24 +70,26 @@ const questions = [
     
     // TODO: Create a function to initialize app
     function init() {
-        // Write inquirer prompt here
-        // Call writetoFile inside .then()
-         // How to send answers from users into markdown functions??
-        // pass asnswers to writetofile here
+        inquirer.prompt(questions)
+            .then(function(answer){
+                console.log(answer);
+        });
     }
+        
+        
     
     // Function call to initialize app
-    init();// TODO: Include packages needed for this application
+    // init();// TODO: Include packages needed for this application
 
-// TODO: Create an array of questions for user input
-const questions = [`What's your GitHub?`, `Email?`, `Project Name?`, `Description of Project?`
-`License Type?`, ``];
+// // TODO: Create an array of questions for user input
+// const questions = [`What's your GitHub?`, `Email?`, `Project Name?`, `Description of Project?`
+// `License Type?`, ``];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// function writeToFile(fileName, data) {}
 
-// TODO: Create a function to initialize app
-function init() {}
+// // TODO: Create a function to initialize app
+// function init() {}
 
 // Function call to initialize app
 init();
