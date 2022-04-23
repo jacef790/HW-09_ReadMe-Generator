@@ -21,3 +21,5 @@ added TOC
 removed psuedocode and non working arrow function that was commented out
 
 link to code: https://github.com/jacef790/HW-09_ReadMe-Generator
+
+![ReadMeGif](Untitled_%20Apr%2022%2C%202022%209_15%20PM.gif)
