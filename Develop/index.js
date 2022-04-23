@@ -1,29 +1,3 @@
-// Steps to Solve
-    // 1. User answers questions
-        // inquirer prompt
-    // 2. Pass answers in the .then() 
-        // import generateMarkdown 
-    // 3. Hand of to Generate Markdown to create MD syntax
-    // 4. pass MD to writeTofile
-    // console.log("in writetoFIle", var);
-    // TODO: Include packages needed for this application
-
-// const inquirer = require("inquirer");
-
-    
-    // TODO: Create an array of questions for user input
-    // const questions = [];
-    
-    // TODO: Create a function to write README file
-    // function writeToFile(fileName, data) {
-        // use fs.writefile here
-        // How do I use the markdown file here??
-            // maybe a rest operator
-            // import markdown functions
-           
-        
-    // }
-
 
  // Inquirer and FS variables
  const fs = require('fs');
@@ -69,7 +43,6 @@ const questions = [
 ]
  
 // TODO: Create a function to write README file
-// arrow fx?  const writeToFile = (fileName, data) => {}
 const writeToFile = data => {
     return new Promise((resolve, reject) => {
         fs.writeFile('./generatedREADME.md', data, err => {
@@ -96,12 +69,6 @@ const writeToFile = data => {
      }); 
  }
  
-     
-
-
-
-
-
 
 init();
 

@@ -17,3 +17,7 @@ attemping to fix badge not rendering to readme
 license badge now rendering 
 
 added TOC
+
+removed psuedocode and non working arrow function that was commented out
+
+link to code: https://github.com/jacef790/HW-09_ReadMe-Generator
