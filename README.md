@@ -2,4 +2,4 @@
 
 inquirer, fs, genMarkdown variables added
 question array added
-initalize function added with working prompt questions and logged answers
+initialize function added with working prompt questions and logged answers
