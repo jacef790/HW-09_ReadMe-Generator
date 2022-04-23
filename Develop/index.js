@@ -26,9 +26,9 @@
 
 
  // Inquirer and FS variables
- const inquirer = require('inquirer');
  const fs = require('fs');
- const generateMarkdown = require('./utils/generateMarkdown.js');
+const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 
 // question array
@@ -68,12 +68,29 @@ const questions = [
  }
 ]
  
- // TODO: Create a function to initialize app
+// TODO: Create a function to write README file
+// arrow fx?  const writeToFile = (fileName, data) => {}
+const writeToFile = data => {
+    return new Promise((resolve, reject) => {
+        fs.writeFile('./generatedREADME.md', data, err => {
+            if (err) {
+                reject(err);
+                return;
+            }
+            resolve({
+                ok: true
+            });
+        });
+    });
+};
+
+
+// TODO: Create a function to initialize app
  function init() {
      inquirer.prompt(questions)
          .then(function(answers){
-         console.log(answers);
-         var data = answers;
+            console.log(answers);
+         var data = generateMarkdown(answers);
          writeToFile(data);
          console.log(data);
      }); 
@@ -83,24 +100,8 @@ const questions = [
 
 
 
-// TODO: Create a function to write README file
-// arrow fx?  const writeToFile = (fileName, data) => {}
-// const writeToFile = answers => {
-//  return new Promise((resolve, reject) =>{
-//      fs.writeFile('./generateREADME.md', fileContent, err => {
-//          if(err){
-//              reject (err);
-//              return
-//          }
-//          resolve({
-//              ok: true
-//          })
-//      })
-//  })
-// }
 
-// fs.writeFile('./utils/generateMarkdown.md', JSON.stringify(answers), (err) =>
-// err ? console.error(err) : console.log('Success!'));
+
 
 init();
 
